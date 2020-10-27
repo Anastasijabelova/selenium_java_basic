@@ -17,9 +17,12 @@ public class Sample1 {
 
         //open test homepage
         driver.get("https://google.com");
-        driver.get("https://kristinek.github.io/site/");
+        // driver.get("https://kristinek.github.io/site/");
+
+        driver.findElement(By.xpath("//input[@aria-label = 'Search']")).sendKeys("some text");
+        driver.findElement(By.xpath("//input[@type = 'submit']")).click();
+
         System.out.println(driver.findElement(By.id("h1")).getText());
-        //get title of page
         System.out.println(driver.getTitle());
 
         //get URL of current page
